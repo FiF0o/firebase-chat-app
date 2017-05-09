@@ -18,3 +18,4 @@ yarn-error.log*
 
 # config
 .idea
+src/config/tokens.js

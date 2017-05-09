@@ -50,6 +50,7 @@
     "whatwg-fetch": "2.0.2"
   },
   "dependencies": {
+    "prop-types": "15.5.8",
     "react": "15.5.4",
     "react-dom": "15.5.4"
   },
