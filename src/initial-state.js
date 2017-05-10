@@ -3,7 +3,17 @@
  */
 export const initialState = {
     // slice of our state/reducer
-    something: {
-        text: 'bar'
-    }
+    messages: {
+        'firstMessage': {
+            message: 'Marv Luvvhini est un peu un vier.',
+            timeStamp: Date.now() - 600,
+            uid: 'firstUser'
+        },
+        'secondMessage': {
+            message: 'Peut etre pas autant que Tromblonator, le roi des tromblons!',
+            timeStamp: Date.now() - 540,
+            uid: 'secondUser'
+        }
+    },
+    newMessage: ''
 };

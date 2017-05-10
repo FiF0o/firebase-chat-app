@@ -1,24 +1,26 @@
-import React, { PropTypes } from 'react';
-import SomethingContainer from '../containers/SomethingContainer';
+import React from 'react';
+import PropTypes from 'prop-types';
+import NewMessageContainer from '../containers/NewMessageContainer';
+import MessagesContainer from '../containers/MessagesContainer';
 import './App.css';
 
 // props will be passed down to the containers as props
-const App = ({ auth, signIn, signOut }) => {
+const App = ({ auth, ...props }) => {
     return (
         <main className="Application">
             <div className="Application--sidebar">
-                App component
+                Sidebar section
             </div>
-            Container placed here
-            <SomethingContainer />
+            <NewMessageContainer />
+            <MessagesContainer />
         </main>
     );
 };
 
 App.propTypes = {
-    // auth: PropTypes.object.isRequired,
-    // signIn: PropTypes.func.isRequired,
-    // signOut: PropTypes.func.isRequired
+    // TODO Must be required
+    auth: PropTypes.object,
+    //TODO Import signIn() and signOut()
 };
 
 export default App;

@@ -6,8 +6,7 @@ import thunk from 'redux-thunk';
 import { createLogger } from 'redux-logger';
 import reducer from './reducers';
 import {initialState} from './initial-state';
-// import ApplicationContainer from './containers/ApplicationContainer';
-import SomethingContainer from './containers/SomethingContainer'
+import ApplicationContainer from './containers/ApplicationContainer';
 
 import {database} from './database/firebase';
 import './index.css';
@@ -30,8 +29,7 @@ const store = createStore(
 
 ReactDOM.render(
     <Provider store={store}>
-        <SomethingContainer />
-        {/*<ApplicationContainer />*/}
+        <ApplicationContainer />
     </Provider>,
   document.getElementById('root')
 );
