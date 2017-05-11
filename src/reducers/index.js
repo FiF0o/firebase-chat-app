@@ -4,6 +4,7 @@
 import { combineReducers } from 'redux';
 import messages from './messages';
 import newMessage from './newMessage';
+import users from './users'
 import auth from './auth';
 
 
@@ -12,7 +13,8 @@ const reducer = combineReducers({
     messages,
     //newMessage: newMessage
     newMessage,
-    auth
+    auth,
+    users,
 });
 
 export default reducer;

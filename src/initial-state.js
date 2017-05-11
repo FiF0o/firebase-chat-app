@@ -23,5 +23,12 @@ export const initialState = {
             uid: 'secondUser'
         }
     },
+    users: {
+      'firstUser': {
+          displayName: 'Marv Zgegouz',
+          email: 'trompette@kikou.com',
+          photoURL: 'http://placehold.it/150x150'
+      }
+    },
     newMessage: ''
 };

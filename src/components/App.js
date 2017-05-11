@@ -3,9 +3,12 @@ import PropTypes from 'prop-types';
 import NewMessageContainer from '../containers/NewMessageContainer';
 import MessagesContainer from '../containers/MessagesContainer';
 
+import {User as CurrentUser} from '../components/User';
+
 import SignIn from './SignIn';
 
 import './App.css';
+
 
 // props will be passed down to the containers as props
 const App = ({ auth, signIn, signOut, ...props }) => (
@@ -13,7 +16,7 @@ const App = ({ auth, signIn, signOut, ...props }) => (
         <div className="Application--sidebar">
             { auth.status === 'ANONYMOUS' && <SignIn signingIn={ signIn } /> }
             { auth.status === 'SIGNED_IN' && <NewMessageContainer /> }
-            { auth.status === 'SIGNED_IN' && <button onClick={signOut}>Sign out</button> }
+            { auth.status === 'SIGNED_IN' && <CurrentUser auth={auth} signOut={signOut} /> }
         </div>
         <MessagesContainer />
     </main>
@@ -24,5 +27,6 @@ App.propTypes = {
     signIn: PropTypes.func.isRequired,
     signOut: PropTypes.func.isRequired,
 };
+
 
 export default App;
