@@ -1,21 +1,64 @@
 /**
  * Created by jonlazarini on 10/05/17.
  */
-import { SIGN_IN, SIGN_OUT } from '../actionTypes';
+import { SIGN_IN, SIGN_OUT, ATTEMPT_LOGIN } from '../actionTypes';
+
+// expected response from firebase
+let userMock = {
+    type: SIGN_IN,
+    email: 'lorem.ipsum@example.com',
+    displayName: 'Kikou Lol',
+    photoURL: 'http://placehold.it/150x150',
+    uid: 'firstUser'
+};
 
 export const signIn = () => {
-    // from firebase
+    return (dispatch) => {
+        // triggers Loading view from here
+        dispatch({type: ATTEMPT_LOGIN});
+        //TODO replace with firebase APIs: auth, etc.. - Listener function will handle dispatching actions
+        dispatch(signedIn(userMock)); // dispatch the next action to trigger the redux flow
+    }
+};
+
+// we will store the user from firebase here
+const signedIn = (user) => {
     return {
         type: SIGN_IN,
-        email: 'lorem.ipsum@example.com',
-        displayName: 'Kikou Lol',
-        photoURL: 'http://placehold.it/150x150',
-        uid: 'firstUser'
+        email: user.email,
+        displayName: user.displayName,
+        photoURL: user.photoURL,
+        uid: user.uid
     }
 };
 
 export const signOut = () => {
+    return (dispatch) => {
+        dispatch({type: ATTEMPT_LOGIN});
+        dispatch(signedOut());
+    }
+};
+
+const signedOut = () => {
     return {
         type: SIGN_OUT
     };
 };
+
+// export const signIn = () => {
+//     return {
+//         type: SIGN_IN,
+//         email: 'lorem.ipsum@example.com',
+//         displayName: 'Kikou Lol',
+//         photoURL: 'http://placehold.it/150x150',
+//         uid: 'firstUser'
+//     };
+// };
+
+// export const signOut = () => {
+//     return {
+//         type: SIGN_OUT,
+//     };
+// };
+
+//TODO Listener function to receive auth state change and trigger signedIn() signedOut() when required

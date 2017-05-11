@@ -1,7 +1,7 @@
 /**
  * Created by jonlazarini on 10/05/17.
  */
-import { SIGN_IN, SIGNED_IN, SIGN_OUT } from '../actionTypes';
+import { SIGN_IN, SIGNED_IN, SIGN_OUT, ATTEMPT_LOGIN } from '../actionTypes';
 import {initialState} from '../initial-state';
 
 export default function auth(state=initialState.auth, action) {
@@ -23,6 +23,11 @@ export default function auth(state=initialState.auth, action) {
                  displayName: null,
                  photoURL: null,
                  uid: null
+             };
+
+         case ATTEMPT_LOGIN:
+             return {
+                 status: 'WAITING_RESPONSE',
              };
 
          default:

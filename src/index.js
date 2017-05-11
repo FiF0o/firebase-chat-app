@@ -33,3 +33,7 @@ ReactDOM.render(
     </Provider>,
   document.getElementById('root')
 );
+
+/**
+ * Fires listener functions here
+ */
