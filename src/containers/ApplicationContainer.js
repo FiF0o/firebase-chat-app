@@ -17,5 +17,19 @@ const mapDispatchToProps = (dispatch) =>
        signOut: () => signOut()
     }, dispatch);
 
+/*
+const mapDispatchToProps = (dispatch) => {
+    return {
+        signIn: () => {
+            dispatch({type: 'ATTEMPT_LOGIN'});
+            dispatch(signIn())
+        },
+        signOut: () => {
+            dispatch(signOut())
+        }
+
+    }
+};
+*/
 
 export default connect(mapStateToProps, mapDispatchToProps)(App);

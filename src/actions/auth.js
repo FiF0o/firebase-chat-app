@@ -5,7 +5,6 @@ import { SIGN_IN, SIGN_OUT, ATTEMPT_LOGIN } from '../actionTypes';
 
 // expected response from firebase
 let userMock = {
-    type: SIGN_IN,
     email: 'lorem.ipsum@example.com',
     displayName: 'Kikou Lol',
     photoURL: 'http://placehold.it/150x150',
@@ -17,6 +16,7 @@ export const signIn = () => {
         // triggers Loading view from here
         dispatch({type: ATTEMPT_LOGIN});
         //TODO replace with firebase APIs: auth, etc.. - Listener function will handle dispatching actions
+        // eslint-disable-next-line
         dispatch(signedIn(userMock)); // dispatch the next action to trigger the redux flow
     }
 };
@@ -35,6 +35,7 @@ const signedIn = (user) => {
 export const signOut = () => {
     return (dispatch) => {
         dispatch({type: ATTEMPT_LOGIN});
+        // eslint-disable-next-line
         dispatch(signedOut());
     }
 };

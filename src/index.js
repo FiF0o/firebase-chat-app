@@ -9,12 +9,15 @@ import {initialState} from './initial-state';
 import ApplicationContainer from './containers/ApplicationContainer';
 
 import {database} from './database/firebase';
+
+import { myMiddleware } from './middlewares/myMiddleware';
+
 import './index.css';
 
 // debug firebase
 database.ref().set('it worked');
 
-const middleware = [ thunk, createLogger() ];
+const middleware = [ thunk, createLogger(), myMiddleware ];
 const enhancers = [];
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 
