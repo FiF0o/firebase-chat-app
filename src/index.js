@@ -1,34 +1,20 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { applyMiddleware, compose, createStore } from 'redux';
 import { Provider } from 'react-redux';
-import thunk from 'redux-thunk';
-import { createLogger } from 'redux-logger';
-import reducer from './reducers';
-import {initialState} from './initial-state';
 import ApplicationContainer from './containers/ApplicationContainer';
 
-import {database} from './database/firebase';
+import {store} from './store';
 
-import { myMiddleware } from './middlewares/myMiddleware';
+import { listeningToAuthChanges } from './utils/listeners';
 
 import './index.css';
 
-// debug firebase
-database.ref().set('it worked');
 
-const middleware = [ thunk, createLogger(), myMiddleware ];
-const enhancers = [];
-const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
+/**
+ * Fires listener functions here
+ */
+store.dispatch(listeningToAuthChanges());
 
-const store = createStore(
-    reducer,
-    initialState,
-    composeEnhancers(
-        applyMiddleware(...middleware),
-        ...enhancers
-    )
-);
 
 ReactDOM.render(
     <Provider store={store}>
@@ -36,7 +22,3 @@ ReactDOM.render(
     </Provider>,
   document.getElementById('root')
 );
-
-/**
- * Fires listener functions here
- */
