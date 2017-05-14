@@ -8,8 +8,10 @@ import map from 'lodash/map';
 
 import Message from './message';
 
+import { belongToCurrentUser } from '../../utils/auth';
 
-const Messages = ({ messages, destroyMessage }) => (
+
+const Messages = ({ messages, destroyMessage, auth, users }) => (
     <section>
         {
             map(messages, (message, key) => (
@@ -18,6 +20,8 @@ const Messages = ({ messages, destroyMessage }) => (
                     id={key}
                     destroyMessage={destroyMessage(key)}
                     {...message}
+                    user={users[message.uid]}
+                    belongToCurrentUser={belongToCurrentUser(auth.uid, message.uid)}
                 />
                 )
             )

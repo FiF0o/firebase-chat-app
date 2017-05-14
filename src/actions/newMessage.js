@@ -4,7 +4,6 @@
 import { UPDATE_NEW_MESSAGE, CLEAR_NEW_MESSAGE } from '../actionTypes';
 
 export const updateNewMessage = (message) => {
-    console.log('UPDATE_NEW_MESSAGE message', message);
     return {
         type: UPDATE_NEW_MESSAGE,
         message

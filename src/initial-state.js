@@ -11,7 +11,7 @@ export const initialState = {
         uid: null
     },
     messages: {
-        'firstMessage': {
+     /*   'firstMessage': {
             message: 'Marv Luvvhini est un peu un vier.',
             timeStamp: Date.now() - 600,
             uid: 'firstUser'
@@ -21,14 +21,14 @@ export const initialState = {
             message: 'Peut etre pas autant que Tromblonator, le roi des tromblons!',
             timeStamp: Date.now() - 540,
             uid: 'secondUser'
-        }
+        }*/
     },
     users: {
-      'firstUser': {
+/*      'firstUser': {
           displayName: 'Marv Zgegouz',
           email: 'trompette@kikou.com',
           photoURL: 'http://placehold.it/150x150'
-      }
+      }*/
     },
     newMessage: ''
 };

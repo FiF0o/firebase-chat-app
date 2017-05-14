@@ -6,9 +6,9 @@ import Messages from '../components/Messages';
 import { destroyMessage } from '../actions/messages';
 
 
-const mapStateToProps = ({ messages }) => {
+const mapStateToProps = ({ messages, users, auth }) => {
     //state.messages (reducer) from our store
-    return { messages };
+    return { messages, users, auth };
 };
 
 const mapDispatchToProps = (dispatch) => {

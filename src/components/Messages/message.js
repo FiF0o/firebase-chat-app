@@ -3,14 +3,21 @@
  */
 import React from 'react';
 
-const Message = ({ message, destroyMessage, ...props }) => (
+const Message = ({ message, destroyMessage, belongToCurrentUser, user, ...props }) => (
     <article>
         <div>
-            <p>{ message }</p>
-            <footer>
-                <button onClick={destroyMessage}>Delete message</button>
-            </footer>
+            <img src={user.photoURL} alt="" width="60" height="60" />
+            <h6>{user.displayName}</h6>
         </div>
+        <p>{ message }</p>
+        <footer>
+            {
+                belongToCurrentUser ?
+                    <button onClick={destroyMessage}>Delete message</button>
+                    :
+                    null
+            }
+        </footer>
     </article>
 );
 

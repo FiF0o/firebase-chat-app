@@ -63,5 +63,3 @@ export const signedOut = () => {
 //         type: SIGN_OUT,
 //     };
 // };
-
-//TODO Listener function to receive auth state change and trigger signedIn() signedOut() when required

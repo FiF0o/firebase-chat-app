@@ -7,7 +7,10 @@ import { auth, database } from '../database/firebase';
 
 import { signedIn, signedOut } from '../actions/auth';
 import { addMessage, removeMessage } from '../actions/messages';
+import { addUser } from '../actions/users';
 
+
+const usersRef = database.ref('users');
 
 export const listeningToAuthChanges = () => {
     return (dispatch) => {
@@ -17,7 +20,7 @@ export const listeningToAuthChanges = () => {
                 dispatch(signedIn(user));
                 let u = pick(user, ['displayName', 'photoURL', 'email', 'uid']);
                 // write user to the DB
-                database.ref('users').child(user.uid)
+                usersRef.child(user.uid)
                     .set(u);
             }
             else dispatch(signedOut());
@@ -42,4 +45,12 @@ export const listeningToMessages = () => {
             dispatch(removeMessage(snapshot.key));
         });
     }
+};
+
+export const ListeningForUsers = () => {
+    return (dispatch) => {
+        usersRef.on('child_added', (snapshot) => {
+            dispatch(addUser(snapshot.val()));
+        });
+    };
 };

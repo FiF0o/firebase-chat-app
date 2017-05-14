@@ -46,4 +46,3 @@ export const destroyMessage = (key) => {
             .then(() => dispatch(removeMessage(key)))
     }
 };
-

@@ -5,16 +5,18 @@ import ApplicationContainer from './containers/ApplicationContainer';
 
 import {store} from './store';
 
-import { listeningToAuthChanges, listeningToMessages } from './utils/listeners';
+import { listeningToAuthChanges, listeningToMessages, ListeningForUsers } from './utils/listeners';
 
 import './index.css';
 
 
 /**
- * Fires listener functions here
+ * Fires listener functions here to dispatch actions to
+ * the user once 'things' are added to the DB.
  */
 store.dispatch(listeningToAuthChanges());
 store.dispatch(listeningToMessages());
+store.dispatch(ListeningForUsers());
 
 
 ReactDOM.render(
