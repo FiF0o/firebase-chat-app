@@ -1,9 +1,13 @@
 /**
  * Created by jonlazarini on 09/05/17.
  */
+import {database} from '../database/firebase';
+
 import { ADD_MESSAGE, REMOVE_MESSAGE } from '../actionTypes';
 
-export const addMessage = (message, uid, key= Date.now()) => {
+import {clearNewMessage} from './newMessage';
+
+export const addMessage = ({message, uid}, key = Date.now()) => {
     return {
         type: ADD_MESSAGE,
         message,
@@ -13,8 +17,20 @@ export const addMessage = (message, uid, key= Date.now()) => {
     }
 };
 
+const messagesRef = database.ref('/messages');
+
 export const createMessage = (message, uid) => {
-    return addMessage(message, uid);
+    return (dispatch) => {
+        // addMessage(message, uid);
+        const payload = {
+            message,
+            uid,
+            timeStamp: Date.now(),
+        };
+
+       messagesRef.push(payload)
+            .then(() => dispatch(clearNewMessage()));
+    }
 };
 
 export const removeMessage = (key) => {
@@ -23,3 +39,11 @@ export const removeMessage = (key) => {
         key
     }
 };
+
+export const destroyMessage = (key) => {
+    return (dispatch) => {
+        messagesRef.child(key).remove()
+            .then(() => dispatch(removeMessage(key)))
+    }
+};
+

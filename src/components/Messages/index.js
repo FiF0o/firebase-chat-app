@@ -9,14 +9,14 @@ import map from 'lodash/map';
 import Message from './message';
 
 
-const Messages = ({ messages, deleteMessage }) => (
+const Messages = ({ messages, destroyMessage }) => (
     <section>
         {
             map(messages, (message, key) => (
                 <Message
                     key={key}
                     id={key}
-                    deleteMessage={deleteMessage(key)}
+                    destroyMessage={destroyMessage(key)}
                     {...message}
                 />
                 )
@@ -26,7 +26,7 @@ const Messages = ({ messages, deleteMessage }) => (
 );
 
 Messages.propTypes = {
-    deleteMessage: PropTypes.func.isRequired,
+    destroyMessage: PropTypes.func.isRequired,
     messages: PropTypes.object.isRequired
 };
 

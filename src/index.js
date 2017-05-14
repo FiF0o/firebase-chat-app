@@ -5,7 +5,7 @@ import ApplicationContainer from './containers/ApplicationContainer';
 
 import {store} from './store';
 
-import { listeningToAuthChanges } from './utils/listeners';
+import { listeningToAuthChanges, listeningToMessages } from './utils/listeners';
 
 import './index.css';
 
@@ -14,6 +14,7 @@ import './index.css';
  * Fires listener functions here
  */
 store.dispatch(listeningToAuthChanges());
+store.dispatch(listeningToMessages());
 
 
 ReactDOM.render(

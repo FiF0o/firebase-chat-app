@@ -4,12 +4,12 @@
 import React from 'react';
 
 
-const NewMessage = ({ newMessage, handleChange, handleSubmit }) => {
-    let uid = Math.floor((Math.random() * 10000) + 1000);
+const NewMessage = ({ newMessage, auth, handleChange, handleSubmit }) => {
+    // let uid = Math.floor((Math.random() * 10000) + 1000);
     return(
         <form
             action="submit"
-            onSubmit={ (e) => handleSubmit(e, newMessage, uid) }
+            onSubmit={ (e) => handleSubmit(e, newMessage, auth.uid) }
          >
             {/* TODO undefined argument is uid, to be replaced when connecting firebase */}
             <label htmlFor="new_message">

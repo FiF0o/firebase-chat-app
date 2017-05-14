@@ -7,9 +7,9 @@ import { updateNewMessage, clearNewMessage } from '../actions/newMessage';
 import { createMessage } from '../actions/messages';
 
 // from state/reducer - messages.newMessage
-const mapStateToProps = ({ newMessage }) => {
+const mapStateToProps = ({ newMessage, auth }) => {
     // will be passed as props in NewMessage and used for messages action
-    return { newMessage };
+    return { newMessage, auth };
 };
 
 

@@ -3,7 +3,7 @@
  */
 import { connect } from 'react-redux';
 import Messages from '../components/Messages';
-import { removeMessage } from '../actions/messages';
+import { destroyMessage } from '../actions/messages';
 
 
 const mapStateToProps = ({ messages }) => {
@@ -13,8 +13,8 @@ const mapStateToProps = ({ messages }) => {
 
 const mapDispatchToProps = (dispatch) => {
     return {
-        deleteMessage(key) {
-            return () => dispatch(removeMessage(key));
+        destroyMessage(key) {
+            return () => dispatch(destroyMessage(key));
         }
     };
 };

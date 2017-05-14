@@ -3,12 +3,12 @@
  */
 import React from 'react';
 
-const Message = ({ message, deleteMessage, ...props }) => (
+const Message = ({ message, destroyMessage, ...props }) => (
     <article>
         <div>
             <p>{ message }</p>
             <footer>
-                <button onClick={deleteMessage}>Delete message</button>
+                <button onClick={destroyMessage}>Delete message</button>
             </footer>
         </div>
     </article>
