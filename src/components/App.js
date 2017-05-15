@@ -20,7 +20,7 @@ const App = ({ auth, signIn, signOut, ...props }) => (
             { auth.status === 'SIGNED_IN' && <NewMessageContainer /> }
             { auth.status === 'SIGNED_IN' && <CurrentUser auth={auth} signOut={signOut} /> }
             { auth.status === 'WAITING_RESPONSE' && <Loading/> }
-            { auth.status === 'ERRORED' && <Error err={auth.error} /> }
+            { auth.status === 'ERRORED' && <Error error={auth.error} /> }
         </div>
         <MessagesContainer />
     </main>
