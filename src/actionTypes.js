@@ -12,3 +12,4 @@ export const SIGNED_IN = 'SIGNED_IN';
 export const SIGN_OUT = 'SIGN_OUT';
 
 export const ADD_USER = 'ADD_USER';
+exports.ERROR_SERVER = 'ERROR_SERVER';

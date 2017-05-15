@@ -7,6 +7,7 @@ import {User as CurrentUser} from '../components/User';
 
 import SignIn from './SignIn';
 import {Loading} from './Loading';
+import {Error} from './Error';
 
 import './App.css';
 
@@ -19,6 +20,7 @@ const App = ({ auth, signIn, signOut, ...props }) => (
             { auth.status === 'SIGNED_IN' && <NewMessageContainer /> }
             { auth.status === 'SIGNED_IN' && <CurrentUser auth={auth} signOut={signOut} /> }
             { auth.status === 'WAITING_RESPONSE' && <Loading/> }
+            { auth.status === 'ERRORED' && <Error err={auth.error} /> }
         </div>
         <MessagesContainer />
     </main>
