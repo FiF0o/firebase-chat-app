@@ -8,6 +8,8 @@ import {store} from './store';
 import { listeningToAuthChanges, listeningToMessages, ListeningForUsers } from './utils/listeners';
 
 import './index.css';
+import '../node_modules/muicss/dist/css/mui.min.css';
+import '../node_modules/muicss/dist/js/mui.js';
 
 
 /**
