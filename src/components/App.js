@@ -15,14 +15,18 @@ import './App.css';
 // props will be passed down to the containers as props
 const App = ({ auth, signIn, signOut, ...props }) => (
     <main className="Application">
-        <div className="Application--sidebar">
-            { auth.status === 'ANONYMOUS' && <SignIn signingIn={ signIn } /> }
+        <div className="Application--new-message">
             { auth.status === 'SIGNED_IN' && <NewMessageContainer /> }
+        </div>
+        <div className="Application--auth">
+            { auth.status === 'ANONYMOUS' && <SignIn signingIn={ signIn } /> }
             { auth.status === 'SIGNED_IN' && <CurrentUser auth={auth} signOut={signOut} /> }
             { auth.status === 'WAITING_RESPONSE' && <Loading/> }
             { auth.status === 'ERRORED' && <Error error={auth.error} /> }
         </div>
-        <MessagesContainer />
+        <div className="Application--messages-container" >
+            <MessagesContainer />
+        </div>
     </main>
 );
 

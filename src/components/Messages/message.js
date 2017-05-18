@@ -4,7 +4,7 @@
 import React from 'react';
 
 const Message = ({ message, destroyMessage, belongToCurrentUser, user, ...props }) => (
-    <article>
+    <article className="post">
         <div>
             <img src={user.photoURL} alt="" width="60" height="60" />
             <h6>{user.displayName}</h6>
