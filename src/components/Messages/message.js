@@ -5,15 +5,15 @@ import React from 'react';
 
 const Message = ({ message, destroyMessage, belongToCurrentUser, user, ...props }) => (
     <article className="post">
-        <div>
+        <div className="post--image">
             <img src={user.photoURL} alt="" width="60" height="60" />
-            <h6>{user.displayName}</h6>
+            <h6 className="mui--text-caption">{user.displayName}</h6>
         </div>
-        <p>{ message }</p>
+        <p className="mui--text-body1 mui--text-center">{ message }</p>
         <footer>
             {
                 belongToCurrentUser ?
-                    <button onClick={destroyMessage}>Delete message</button>
+                    <button onClick={destroyMessage} className="mui-btn mui-btn--danger" >Delete message</button>
                     :
                     null
             }

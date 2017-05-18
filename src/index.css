@@ -40,6 +40,10 @@ form > * {
   margin-right: 1em;
 }
 
+#new_message {
+  width: 70%;
+}
+
 /* post messages */
 .post {
   display: flex;
@@ -54,6 +58,10 @@ form > * {
 
 .post > p {
   word-break: break-word;
+}
+
+.post .post--image > img {
+  border-radius: 50%;
 }
 
 /*  */

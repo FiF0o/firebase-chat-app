@@ -25,6 +25,7 @@ const App = ({ auth, signIn, signOut, ...props }) => (
             { auth.status === 'ERRORED' && <Error error={auth.error} /> }
         </div>
         <div className="Application--messages-container" >
+            <h2 className="mui--text-dark-secondary mui--text-headline">chat history</h2>
             <MessagesContainer />
         </div>
     </main>

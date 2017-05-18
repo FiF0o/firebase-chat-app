@@ -8,9 +8,9 @@ import PropTypes from 'prop-types';
 export const User = ({auth, signOut}) => (
     <div>
         <img src={auth.photoURL} alt={auth.displayName}/>
-        <h2>{auth.displayName}</h2>
-        <h3>{auth.email}</h3>
-        <button onClick={signOut}  >Sign Out</button>
+        <h2 className="mui--text-subhead">{auth.displayName}</h2>
+        <h3 className="mui--text-menu">{auth.email}</h3>
+        <button onClick={signOut} className=" mui-btn mui-btn--raised" >Sign Out</button>
     </div>
 );
 

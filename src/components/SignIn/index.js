@@ -7,6 +7,7 @@ const SignIn = ({signingIn}) => (
     <div>
           <button
               onClick={signingIn}
+              className="mui-btn mui-btn--primary"
           >
               Sign In
           </button>
