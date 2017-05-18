@@ -98,7 +98,7 @@ form > * {
 @keyframes dash {
   0% { stroke-dashoffset: 187; }
   50% {
-    stroke-dashoffset: 187/4;
+    stroke-dashoffset: 62;
     transform:rotate(135deg);
   }
   100% {
