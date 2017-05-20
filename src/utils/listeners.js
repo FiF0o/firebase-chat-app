@@ -9,6 +9,8 @@ import { signedIn, signedOut } from '../actions/auth';
 import { addMessage, removeMessage } from '../actions/messages';
 import { addUser } from '../actions/users';
 
+import registerMessaging from './register-messaging';
+
 
 const usersRef = database.ref('users');
 
@@ -22,6 +24,8 @@ export const listeningToAuthChanges = () => {
                 // write user to the DB
                 usersRef.child(user.uid)
                     .set(u);
+
+                registerMessaging(user);
             }
             else dispatch(signedOut());
         })
