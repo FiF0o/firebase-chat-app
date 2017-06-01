@@ -65,10 +65,6 @@ form > * {
 }
 
 /* loader */
-
-/*$offset: 187;*/
-/*$duration: 1.4s;*/
-
 .spinner {
   animation: rotator 1.4s linear infinite;
 }

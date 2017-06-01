@@ -12,7 +12,6 @@ const NewMessage = ({ newMessage, auth, handleChange, handleSubmit }) => {
             action="submit"
             onSubmit={ (e) => handleSubmit(e, newMessage, auth.uid) }
          >
-            {/* TODO undefined argument is uid, to be replaced when connecting firebase */}
             <div className="mui-textfield mui-textfield--float-label" id="new_message">
                 <input
                     type="text"

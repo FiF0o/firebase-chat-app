@@ -11,7 +11,6 @@ import auth from './auth';
 const reducer = combineReducers({
     // slice of our state where we assign our reducer
     messages,
-    //newMessage: newMessage
     newMessage,
     auth,
     users,

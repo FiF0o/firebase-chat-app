@@ -3,8 +3,4 @@
  */
 import React from 'react';
 
-export const Error = ({error}) => (
-    <div>
-        error is: {error}
-    </div>
-);
+export const Error = ({error}) => (<p>{error}</p>);

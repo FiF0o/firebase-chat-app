@@ -4,19 +4,22 @@
 import { auth, googleAuthProvider } from '../database/firebase';
 import { SIGN_IN, SIGN_OUT, ATTEMPT_LOGIN } from '../actionTypes';
 
-// expected response from firebase
-let userMock = {
-    email: 'lorem.ipsum@example.com',
+
+/**
+ * expected response from firebase
+ *
+ let userMock = {
     displayName: 'Kikou Lol',
     photoURL: 'http://placehold.it/150x150',
     uid: 'firstUser'
-};
+    };
+ *
+ */
 
 export const signIn = () => {
     return (dispatch) => {
         // triggers Loading view from here
         dispatch({type: ATTEMPT_LOGIN});
-        //TODO replace with firebase APIs: auth, etc.. - Listener function will handle dispatching actions
         // eslint-disable-next-line
         // dispatch(signedIn(userMock)); // dispatch the next action to trigger the redux flow
         auth.signInWithPopup(googleAuthProvider);

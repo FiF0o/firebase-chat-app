@@ -9,10 +9,10 @@ import reducer from './reducers';
 
 import {initialState} from './initial-state';
 
-import { myMiddleware } from './middlewares/myMiddleware';
+import { loginMiddleware } from './middlewares/loginMiddleware';
 
 
-const middleware = [ thunk, createLogger(), myMiddleware ];
+const middleware = [ thunk, createLogger(), loginMiddleware ];
 const enhancers = [];
 const composeEnhancers = window.__REDUX_DEVTOOLS_EXTENSION_COMPOSE__ || compose;
 

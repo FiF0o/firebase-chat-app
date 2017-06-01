@@ -14,6 +14,7 @@ import registerMessaging from './register-messaging';
 
 const usersRef = database.ref('users');
 
+//TODO Replace listeners utils by middlewares
 export const listeningToAuthChanges = () => {
     return (dispatch) => {
         // payload from firebase

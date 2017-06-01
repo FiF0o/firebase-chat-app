@@ -12,7 +12,6 @@ import {Error} from './Error';
 import './App.css';
 
 
-// props will be passed down to the containers as props
 const App = ({ auth, signIn, signOut, ...props }) => (
     <main className="Application">
         <div className="Application--new-message">

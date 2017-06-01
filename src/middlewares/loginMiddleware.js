@@ -3,7 +3,7 @@
  */
 import { ERROR_SERVER, ATTEMPT_LOGIN } from '../actionTypes';
 
-export const myMiddleware = store => next => action => {
+export const loginMiddleware = store => next => action => {
     let result = next(action);
     const { type } = action;
 
@@ -13,7 +13,7 @@ export const myMiddleware = store => next => action => {
         {
             // debug
             // throw new Error(`:'(`);
-            console.log('MIDDLEWARE FIRED!!!');
+            console.log('LOGGING IN...');
         }
         catch (err)
         {
