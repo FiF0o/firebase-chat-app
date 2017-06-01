@@ -1,8 +1,34 @@
-This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).</br>
-`eject` command had been done.
+The app is deployed with firebase [chat-app](https://fir-chat-app-a9869.firebaseapp.com).<br><br>
+It uses React with Redux as a front-end with material design (mui - css version) and firebase as a backend.<br>
+Please note that the app uses css grid layouts module, so the layout styling will only work the most recent versions of Chrome.
+
+This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).<br>
+Please note that `npm run eject` has been proceeded.
 
 Below you will find some information on how to perform common tasks.<br>
 You can find the most recent version of this guide [here](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md).
+
+
+## Folder Structure
+
+After creation, your project should look like this:
+
+```
+my-app/
+  README.md
+  node_modules/
+  package.json
+  public/
+    index.html
+    favicon.ico
+  src/
+    App.css
+    App.js
+    App.test.js
+    index.css
+    index.js
+    logo.svg
+```
 
 
 For the project to build, **these files must exist with exact filenames**:
@@ -43,7 +69,7 @@ See the section about [deployment](#deployment) for more information.
 ## Deploy
 
 
-## Todo
+## Improvements
 - firebase rules
-- testing
+- tests
 - fix cloud functions and service workers (offline)
