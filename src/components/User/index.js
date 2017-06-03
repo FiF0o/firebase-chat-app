@@ -6,7 +6,7 @@ import PropTypes from 'prop-types';
 
 
 export const User = ({auth, signOut}) => (
-    <div>
+    <div className="Profile--card">
         <img src={auth.photoURL} alt={auth.displayName}/>
         <h2 className="mui--text-subhead">{auth.displayName}</h2>
         <h3 className="mui--text-menu">{auth.email}</h3>

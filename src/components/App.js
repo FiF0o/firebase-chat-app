@@ -9,8 +9,6 @@ import SignIn from './SignIn';
 import {Loading} from './Loading';
 import {Error} from './Error';
 
-import './App.css';
-
 
 const App = ({ auth, signIn, signOut, ...props }) => (
     <main className="Application">
